@@ -1,0 +1,9 @@
+{% load i18n %}
+<ul>
+{% for notice in notices %}
+{% url notification_notice notice.pk as notification_notice_url %}
+{% blocktrans %}
+  <li><a href="{{ notification_notice_url }}">{{ notice }}</a>
+{% endblocktrans %}
+{% endfor %}
+</ul>
